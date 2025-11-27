@@ -1,0 +1,3001 @@
+<?php
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
+    <title>Workhub Central</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", serif;
+        }
+        .main-conatiner{
+            width: 100%;
+            margin: 0 auto;
+            height: auto;
+        }
+        .hero{
+            width: 100%;
+            height: 100vh;
+            background-image: 
+                linear-gradient( rgba(0, 0, 0, 0.718), rgba(0, 0, 0, 0.742) 10%), 
+                url('https://www.hirezy.ai/_next/static/media/header-box-bg_1.7c728c37.svg'); 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+       .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 80px;
+        margin: auto;
+        padding-left: 60px; /* Kichik ekranda moslashuvchan */
+        padding-right: 60px;
+        box-sizing: border-box;
+}
+
+.header-logotip {
+    font-size: 24px; /* Kichik ekranda logotip o'lchami moslashadi */
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: color 0.3s ease;
+}
+
+.header-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.hero-links{
+    display: flex;
+    background: #000;
+    width: 100%;
+    margin: auto;
+}
+
+.header-links a:hover {
+    color: #9F45BE;
+}
+
+.header-btns {
+    display: flex;
+    gap: 20px;
+    transition: color 0.3s ease;
+}
+.header-mobile-btns{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.shopping-icon{
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    background: #231D4F;
+    padding: 4px 8px;
+    border-radius: 7px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .header {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .header-logotip {
+        font-size: 20px;
+    }
+
+    .header-links {
+        gap: 15px; /* Kichik ekranda bo'shliqlar qisqartiriladi */
+    }
+
+    .header-btns {
+        gap: 15px;
+    }
+        .header-links {
+     /* Linklar logotipdan pastga tushadi */
+     /* Linklar qatorga sig'masa, keyingi qatorda ko'rinadi */
+     font-size: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: auto; /* Kichik ekranda balandlik moslashadi */
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .header-links {
+        display: none;
+    }
+    .header-mobile-btns{
+        display: flex;
+    }
+
+    .header-btns {
+        margin-top: 10px;
+        justify-content: center; /* Kichik ekranda tugmalar markazga joylashadi */
+
+    }
+    .hero-links{
+        flex-direction: ;
+    }
+    .header-btns{
+        display: none;
+
+    }
+}
+
+@media (max-width: 480px) {
+    .header-logotip {
+        font-size: 18px; /* Juda kichik ekranlarda logotip kichrayadi */
+    }
+
+    .header-links a {
+        font-size: 14px; /* Link matn o'lchami moslashtiriladi */
+    }
+
+    .header-btns {
+        flex-direction: column; /* Tugmalar bir ustunda joylashadi */
+        gap: 10px;
+    }
+    .hero-links{
+        display: none;
+    }
+}
+
+        .language{
+            cursor: pointer;
+            transition: color 0.3s ease;
+            font-size: 16px;
+            padding: 10px 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #fff;
+        }
+        .booking{
+            background-color: #9F45BE;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-radius: 5px;
+        }
+        .fa-sharp{
+            font-size: 20px;
+        }
+        .language:hover{
+            background-color: #d497ea;
+        }
+        .booking:hover{
+            background-color: #d497ea;
+        }
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+
+        .language-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .language-options li {
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        .language-options li a {
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+
+        .language-options li a:hover {
+        }
+        .language-selector{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-titles{
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .h-t-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            padding-left: 120px;
+            padding-right: 120px;
+        }
+        @media screen and(max-width: 768px) {
+            .h-t-container{
+            padding-left: 0px;
+            padding-right: 0px;
+            align-items: center;
+            background: #000;
+            }
+            .h-t-container h1{
+            font-size: 1.5rem;
+            justify-content: center;
+
+            }
+        }
+        .contents-conatiner{
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .h-t-container h1{
+            color: #FFF;
+            font-size: 5rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 82px; /* 113.889% */
+            letter-spacing: 0.3px;
+            text-transform: capitalize;
+            
+        }
+        .h-t-container p{
+            color: #FFF;
+            font-family: Poppins;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px; /* 162.5% */
+            letter-spacing: 0.3px;
+        }
+        body{
+            max-width: 1900px;
+            margin: auto;
+        }
+        .main-container2{
+            margin: auto;
+        }
+        .booking2{
+            width: 240px;
+            height: 60px;
+            flex-shrink: 0;
+            color: #FFF;
+            /* font-family: Poppins; */
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 26px; /* 162.5% */
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: #00AE6C;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            }
+            .booking2:hover{
+                background: #008559;
+            }
+        .about2{
+            color: #FFF;
+            /* font-family: Poppins; */
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 26px; /* 162.5% */
+            letter-spacing: 0.3px;
+            text-decoration: none;
+            width: 240px;
+            height: 60px;
+            border: 2px solid #00AE6C;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .about2:hover{
+            background: #00AE6C;
+
+        }
+        .hero-links{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: start;
+            width: 100%;
+            margin-top: 36px;
+        }
+        /* about-section */
+        .about-section{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .contents-conatiner{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        .a-t-c{
+            display: flex;
+            width: 100%;
+            padding-bottom: 100px;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        /* /about-section */
+        .about-section {
+            height: auto;
+            width: 100%;
+            padding-left: 10%;
+            padding-right: 10%;
+            box-sizing: border-box;
+            min-height: 100vh;
+}
+
+.contents-conatiner {
+    width: 100%;
+    height: auto; /* Moslashuvchan bo'lishi uchun auto qilindi */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Kichik ekranlarda markazlashtirish */
+}
+
+.c-title {
+    padding-top: 50px; /* Kichik ekranda moslashtirilgan */
+    padding-bottom: 3px;
+    font-size: 2rem; /* Kichik ekranlar uchun font-size kichraytirildi */
+    font-weight: bold;
+    color: #333;
+    text-align: center; /* Kichik ekranlarda markazlashtirish */
+}
+
+.about-image img {
+     /* Ekran kengligiga moslashadi */
+    max-width: 35rem; /* Maksimal kenglikni saqlash uchun */
+    height: auto; /* Moslashuvchan bo'lishi uchun auto qilindi */
+}
+
+.about-texts {
+    max-width: 90%; /* Kichik ekranlarda kenglikni qisqartirish */
+    margin: 0 auto; /* Markazlashtirish */
+}
+
+.about-texts h2 {
+    font-size: 2em; /* Kichik ekranlarda moslashtirilgan */
+    line-height: 1.5;
+    text-align: center; /* Markazlashtirilgan */
+}
+
+.about-texts p {
+    font-size: 1em; /* Matn o'qilishi uchun kichikroq o'lcham */
+    line-height: 1.6;
+    text-align: justify;
+}
+.c-title{
+            color: #231D4F;
+            font-size: 2.25rem;
+            font-weight: 600;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .about-section {
+        padding-left:0px;
+        padding-right: 0px;
+    }
+
+    .c-title {
+        font-size: 1.5rem;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        color: #231D4F;
+    }
+
+    .about-image img {
+        max-width: 30rem; /* Kichik ekranlarda rasm o‘lchami moslashtirildi */
+    }
+
+    .about-texts h1 {
+        font-size: 1.8em;
+    }
+
+    .about-texts p {
+        font-size: 0.9em;
+    }
+    .c-t-container{
+        flex-direction: column;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .contents-conatiner{
+        flex-direction: column;
+        padding-left: 0px;
+        padding-right: 0px;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .c-title {
+        font-size: 1.2rem;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .h-t-container h1{
+        font-size: 30px;
+ 
+    }
+    .about-image img {
+        max-width: 20rem;
+    }
+
+    .about-texts h2 {
+        font-size: 1.5em;
+    }
+
+    .about-texts p {
+        font-size: 0.8em;
+    }
+}
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 20px;
+        }
+
+        .carousel-item {
+            width: 25%;
+            flex-shrink: 0;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            opacity: 0.7;
+        }
+
+        .carousel-item:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .carousel-item.active {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-item .text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            visibility: hidden;
+        }
+
+        .carousel-item:hover .text {
+            visibility: visible;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+        /* Overall container for the hero section */
+        .hero-title-container {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            height: 100vh;
+            padding-right: 120px;
+            padding-left: 120px;
+            padding-bottom: 100px;
+        }
+
+        /* responsive */
+        @media (max-width: 768px) {
+           .hero-title-container {
+                padding-right:  10px;
+                padding-left:  10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+           .hero-title-container {
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+        }
+
+        /* Background image */
+        .hero-image {
+            background-image: url('hero-image.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Dark overlay effect */
+
+        /* Container for text and links */
+        .hero-text {
+            max-width: 800px;
+            color: #ffffff; /* Dark text color */
+        }
+
+        /* Header style */
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #ffffff; /* Dark color for the header */
+        }
+
+        /* Paragraph style */
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #ffffff; /* Medium gray color */
+        }
+
+        /* Style for the action links container */
+        .hero-action-links {
+            display: flex;
+            justify-content: start;
+            gap: 20px;
+        }
+
+        /* Button styles */
+        .hero-action-links a {
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        /* Button colors */
+        .book-tour {
+            background-color: #BB6BD9; /* Blue background */
+            color: white;
+        }
+
+        .about-us {
+        border:1px solid #BB6BD9;
+            color: white;
+        }
+
+        /* Button hover effects */
+        .hero-action-links a:hover {
+            background-color: #9F45BE; /* Darker blue background */
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .hero-action-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero-action-links a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        /* Chatbot styling */
+      /* Chatbot Styles */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.chatbot-header {
+    background-color: #231D4F;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#chatbot-title {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.chatbot-body {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+#userInput {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.send-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.send-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Small Chatbot Mode */
+.chatbot-container.shrunk {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.shrunk .chatbot-header {
+    justify-content: center;
+}
+
+.shrunk .send-btn {
+    display: none;
+}
+
+.shrunk #chatbot-title {
+    display: none;
+}
+
+/* Message Styles */
+.user-message {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    text-align: left;
+}
+
+.bot-message {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    text-align: left;
+}
+
+.messages div {
+    margin-bottom: 10px;
+}
+
+
+        .messages .user-message,
+        .messages .bot-message {
+            animation: slideIn 0.3s ease-out;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .chatbot-container {
+                width: 280px;
+            }
+
+            .chatbot-input input {
+                font-size: 0.9rem;
+            }
+
+            .chatbot-input button {
+                font-size: 0.9rem;
+            }
+        }
+        /* Container for service icon */
+       
+        /* Container for the info-image */
+
+        /* Responsiveness for smaller screens */
+      
+        .big-title{
+            padding: 50px;
+            text-align: center;
+        }
+        .big-title h1{
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #231D4F;
+            line-height: 100px;
+        }
+        .big-title p{
+            font-size: 18px;
+            color: #525252;
+            margin-bottom: 10px;
+            max-width: 600px;
+            margin: auto;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .pricing-section-container{
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+        .pricing-title h2{
+            color: #231D4F;
+            font-size: 2.25rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 120px;
+        }
+        .pricing-type{
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .pricing-type div{
+            color: #231D4F;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        .pricing-type p{
+            color: #848199;
+            max-width: 584px;
+        }
+        .p-btns{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+    
+        }
+       
+/* Umumiy tugma uslubi */
+.p-btns button {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Monthly tugmasi */
+.monthly-btn, .hourly-btn {
+    border-radius: 30px;
+    border: none;
+    width: 91px;
+    height: 44px;
+    font-size: 12px;
+    font-weight: 500;
+    overflow: hidden;
+}
+
+.monthly-btn {
+    background: #746f95;
+    color: #fff;
+}
+
+.hourly-btn {
+       background: #746f95;
+
+    color: #ffffff;
+}
+
+/* Tanlangan tugma */
+button.active {
+    background: #231D4F;
+    color: #fff;
+    box-shadow: 0 8px 15px rgba(35, 29, 79, 0.5);
+}
+
+/* Hover effekti */
+button:hover:not(.active) {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.pricing-title{
+    width: 70%;
+    margin: auto;
+}
+.language-selector {
+    position: relative;
+    display: inline-block;
+}
+
+.language-btn {
+               border: 1px solid #9F45BE;
+
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    gap: 4px;
+}
+
+.language-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    display: none;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.language-options li {
+    padding: 10px 25px;
+}
+
+.language-options li:hover {
+    background: #231d4f95;
+    color: white;
+}
+
+.language-options a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.language-options a:hover {
+    color: white;
+}
+
+/* Show dropdown when active */
+.language-selector.active .language-options {
+    display: block;
+}
+.pricing-section {
+    margin-top: 40px;
+    padding: 50px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 
+    4px  10px 8px 8px #231D4F;
+    margin-left: 120px;
+    margin-right: 120px;
+    border-radius: 30px;
+    height: auto;
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 450px;
+    padding: 20px;
+    text-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-direction: column;
+    display: flex;
+}
+
+.pricing-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px #231D4F;
+}
+
+.plan-title {
+    font-size: 1.5em;
+    color: #231D4F;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.25em;
+    color: #231D4F;
+    margin-bottom: 60px;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+.features-list i {
+    font-size: 1em;
+    margin-right: 10px;
+    color: #9F45BE;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #231D4F;
+    color: white;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 30px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+    margin-top: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #9F45BE;
+}
+.meeting-space{
+    background-color: #231D4F;
+    height:500px;
+}
+   .meeting-space .plan-title{
+    color: #fff;
+ 
+   }
+    .meeting-space p{
+    color: #fff;
+ 
+   }
+   .meeting-space .features-list li{
+        color: #fff;
+    }
+    .meeting-space .btn{
+        background-color: #9F45BE;
+        color: #fff;
+        margin-top: 70px;
+    }
+    .meeting-space .btn:hover{
+        background-color: #fff;
+        color: #231D4F;
+    }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pricing-card {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .pricing-section{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+body{
+    max-width: 1500px;
+    margin: auto;
+}
+/* booking section */
+ /* Booking Section */
+
+    
+    </style>
+    <style>
+    /* Umumiy uslublar */
+    #advantages {
+        background-color: #ffffff;
+        text-align: center;
+        height: auto;
+        margin-top: 100px;
+        padding-top: 50px;
+        margin-bottom: 100px;
+    }
+
+    .Main_title__gnOI1 span {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 30px;
+        display: inline-block;
+    }
+
+    .MuiGrid-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .MuiGrid-item {
+        flex: 0 0 calc(25% - 20px);
+        box-sizing: border-box;
+        background-color: #f6f8f9;
+        /* border: 1px solid #e0e0e0; */
+        border-radius: 10px;
+        padding: 20px;
+        text-align: left;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        height: 25rem;
+        padding-top: 20px;
+        max-width: 18.375rem;
+    }
+
+    .MuiGrid-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .AdvantagesBox_root__3pkNd img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 55px;
+        padding-top: 20px;
+    }
+
+    .AdvantagesBox_textWrapper__M31in h2 {
+        font-weight: 500;
+        font-size: 1.500rem;
+        line-height: 1.750rem;
+        letter-spacing: 0.33px;
+        color: #231D4F;
+        margin: 0 0 10px;
+    }
+
+    .AdvantagesBox_textWrapper__M31in h4 {
+        font-size: 1.000rem;
+        line-height: 1.500rem;
+        font-weight: 400;
+        color: #000;
+        opacity: 0.8;
+        letter-spacing: -0.33px;
+    }
+
+    .AdvantagesBox_mobileText__PCsdI {
+        display: none;
+    }
+
+    /* Tugma uslubi */
+    .Main_showAll__VEjqW button {
+        margin-top: 30px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #231D4F;
+        border: 2px solid #231D4F;
+        background-color: transparent;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .Main_showAll__VEjqW button:hover {
+        background-color: #231D4F;
+        color: #fff;
+    }
+
+    /* Mobil versiya uchun */
+    @media (max-width: 768px) {
+        .MuiGrid-item {
+            flex: 0 0 calc(50% - 20px);
+        }
+
+        .AdvantagesBox_mobileText__PCsdI {
+            display: block;
+            font-size: 0.875rem;
+            color: #777;
+        }
+        .carousel{
+            flex-direction: column;
+        }
+        .a-t-c{
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .MuiGrid-item {
+            flex: 0 0 100%;
+        }
+    }
+    .rooms-info{
+        font-size: 1.5rem;
+        color:#fb0fff;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .hero-links{
+        background: none;
+    }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Container and Main Section */
+
+@media screen and (max-width: 768px) {
+    .form-group {
+        flex: 1 1 100%;
+    }
+
+    .submit-btn button {
+        width: 100%;
+    }
+}
+
+
+
+        .container {
+            height: 100vh;
+            background:linear-gradient(rgba(0, 0, 0, 0.55) 30%, rgba(0, 0, 0, 0.802) 100%), url('https://s3-alpha-sig.figma.com/img/e7d7/6601/55fb8f12d8c71ec12c17fee2447a95ef?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IkZmPcsRHp~wM-DUef3HGt9PoApysOcGhmpjRwg7m1s1v3DDYr~tWYZiWqkYbT70VxepOA7itsSQ52M65-4rLLsbGLGPyuoMFCyF2~XEBDLe~-Z9E0nzBRuLuTnTF4J95gmFhNajMuI~2C9xq-ECzAimrLdTk3qxeRMKY12OlXy0l78179wwttDfnPF-AJgHknhliiXfrDM38ElJwZV7P45HTQb2g2udDN55yH4Lchbk2phAuA35zUazVPMZyH8UHAXIrCgUrukwWkIWPkmGrn7627EU08k6PuExDQRC3b2XzO8f~lSwKQzT0yLW9aXysFkxNtkcfcCiYCPcF00BkA__') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            border-radius: 20px;
+        }
+
+        .bookingm1 {
+            width: 80%;
+            max-width: 600px;
+            background: #231D4F;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin-right: 100px;
+
+        }
+
+        .bookingm1 h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .checkbox-group input {
+            display: none;
+        }
+
+        .bookingm1 button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #9F45BE;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .bookingm1 button:hover {
+            background-color: #BB6BD9;
+        }
+        /* Planshet va kichikroq ekranlar uchun */
+@media (max-width: 768px) {
+    .container{
+        align-items: center;
+    }
+    .bookingm1 {
+        width: 90%;
+        padding: 15px;
+        margin-right: 0px;
+
+    }
+
+    .bookingm1 h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .bookingm1 button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+/* Mobil telefon ekranlari uchun */
+@media (max-width: 480px) {
+    .bookingm1 {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .bookingm1 h2 {
+        font-size: 1.3rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 0.85rem;
+        padding: 7px;
+    }
+
+    .bookingm1 button {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+}
+
+.testimonial-section {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.testimonial-header h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.testimonial-header p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.testimonial-card {
+   background-color: #231d4f89;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.05);
+}
+
+.user-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.testimonial-card h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.stars {
+  margin-bottom: 15px;
+  color: #ffcc00;
+  font-size: 1.2rem;
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .testimonial-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-header h2 {
+    font-size: 2rem;
+  }
+
+  .testimonial-header p {
+    font-size: 1rem;
+  }
+
+  .testimonial-card {
+    width: 90%;
+  }
+}
+/* blog section */
+.blog-section {
+  padding: 50px 20px;
+  background-color: #342a82;
+  text-align: center;
+}
+
+.blog-header h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.blog-header p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.blog-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px);
+}
+
+.blog-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 15px;
+  text-align: left;
+}
+
+.blog-content h3 {
+  font-size: 1.5rem;
+  color: #231D4F;
+  margin-bottom: 10px;
+}
+
+.blog-content p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.read-more {
+  text-decoration: none;
+  color: #231D4F;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.read-more:hover {
+  color: #0056b3;
+}
+.load-more {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.load-more:hover {
+  background-color: #0056b3;
+}
+.load-more,
+.load-less {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.load-more:hover,
+.load-less:hover {
+  background-color: #0056b3;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blog-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blog-card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-header h2 {
+    font-size: 2rem;
+  }
+
+  .blog-header p {
+    font-size: 1rem;
+  }
+}
+/* Trusted By Section */
+.trusted-by-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.trusted-by-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #231D4F;
+  margin-bottom: 10px;
+}
+
+.trusted-by-section p {
+  font-size: 1.2rem;
+  color: #231D4F;
+  margin-bottom: 30px;
+}
+
+.trusted-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+}
+
+.logo {
+  max-width: 120px;
+  max-height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+@media (max-width: 768px) {
+  .trusted-by-section h2 {
+    font-size: 1.8rem;
+  }
+  .trusted-by-section p {
+    font-size: 1rem;
+  }
+  .trusted-logos {
+    grid-template-columns: repeat(3, 1fr); /* 3 logotip */
+  }
+}
+
+@media (max-width: 480px) {
+  .trusted-by-section h2 {
+    font-size: 1.5rem;
+  }
+  .trusted-by-section p {
+    font-size: 0.9rem;
+  }
+  .trusted-logos {
+    grid-template-columns: repeat(2, 1fr); /* 2 logotip */
+  }
+}
+/* faq */
+.faq-section {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding-bottom: 70px;
+    padding-top: 70px;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 100px;
+    color: #231D4F;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+}
+
+.faq-question {
+    margin: auto;
+    width: 70%;
+    padding: 35px;
+    text-align: left;
+    background-color: #9F45BE;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.faq-question:hover {
+    background-color: #231D4F;
+}
+
+.plus-icon {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px;
+    background-color: #e9ecef;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+    max-height: 0;
+    opacity: 0;
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
+/* Expand the answer */
+.faq-answer.open {
+    max-height: 500px; /* Adjust to the size of your content */
+    opacity: 1;
+}
+
+.faq-question.open .plus-icon {
+    transform: rotate(45deg); /* Rotate the plus icon when open */
+}
+
+.newsletter-section {
+    text-align: center;
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.newsletter-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.newsletter-section p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#newsletter-form input {
+    padding: 10px;
+    width: 250px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+#newsletter-form button {
+    padding: 11px 20px;
+    background-color: #231D4F;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#newsletter-form button:hover {
+    background-color: #9F45BE;
+}
+
+.success-message {
+    color: green;
+    font-size: 16px;
+}
+
+.error-message {
+    color: red;
+    font-size: 16px;
+}
+
+/* Sign Up Section */
+.sign-up-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.sign-up-container {
+    background-color: #080c3bdf;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sign-up-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #9F45BE;
+    outline: none;
+}
+
+.sign-up-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sign-up-btn:hover {
+    background-color: #9F45BE;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: honeydew;
+}
+
+.login-link a {
+    color: #ad4caf;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .sign-up-container {
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .form-group input {
+        font-size: 14px;
+    }
+
+    .sign-up-btn {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sign-up-container {
+        padding: 20px;
+    }
+
+    .sign-up-container h2 {
+        font-size: 20px;
+    }
+
+    .form-group input {
+        font-size: 12px;
+    }
+
+    .sign-up-btn {
+        font-size: 12px;
+    }
+
+    .login-link {
+        font-size: 12px;
+    }
+}
+
+/* Footer */
+
+.footer {
+    background-color: #231D4F;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding-top: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap; /* To make items wrap on smaller screens */
+}
+
+.footer-logo h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Add some space on mobile screens */
+}
+
+.footer-links ul,
+.footer-additional ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li,
+.footer-additional ul li {
+    margin: 10px 0;
+}
+
+.footer-links ul li a,
+.footer-additional ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover,
+.footer-additional ul li a:hover {
+    color: #9F45BE;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.footer-additional {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-bottom {
+    background-color: #231D4F;
+    padding-left: 70px;
+    padding-right: 70px;
+    margin-top: 20px;
+    border-top: 2px solid whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .footer-logo h3 {
+        text-align: center;
+    }
+
+    .footer-links,
+    .footer-contact,
+    .footer-additional {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-links ul,
+    .footer-additional ul {
+        padding-left: 0;
+    }
+
+    .footer-links ul li,
+    .footer-additional ul li {
+        margin: 8px 0;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo h3 {
+        font-size: 20px; /* Smaller font size on very small screens */
+    }
+    .footer-bottom{
+        flex-direction: column;
+    }
+
+    .footer-links ul li,
+    .footer-additional ul li {
+        font-size: 14px; /* Smaller font size on very small screens */
+    }
+
+    .footer-contact p,
+    .footer-bottom p {
+        font-size: 12px; /* Smaller font size on very small screens */
+    }
+}
+/* Umumiy dizayn */
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;  /* Bo'sh joyni yaxshilash */
+  padding: 20px;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  width: 100%;
+  box-sizing: border-box;  /* Padding va marginlar hisobga olinishi uchun */
+  flex-direction: row;  /* Kattaroq ekranlarda yonma-yon */
+}
+
+.service-icon {
+  flex: 1;
+  max-width: 45%;  /* Rasmlar uchun maksimal kenglik */
+}
+
+.ser-icon {
+  max-width: 100%;  /* Rasmni kengaytirish */
+  height: auto;
+  border-radius: 100px;  /* Burchaklarni yumshatish */
+}
+
+.service-info {
+    margin-top: 10px;
+
+  flex: 1;
+  max-width: 50%;
+  height: auto;
+}
+
+.service-texts h1 {
+  font-size: 2.225rem;
+  font-weight: bold;
+  color: #231D4F;
+  margin-bottom: 30px;
+}
+
+.icon-texts {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.icon-infoor {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.icon-infoor i {
+  font-size: 3.2rem;
+  margin-right: 10px;
+  width: 100px;
+  height: 100px;
+  background: #231D4F;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+}
+
+.icon-texts p {
+  font-size: 1rem;
+  color: #555;
+}
+.icon-yozuvlar p{
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 50px;
+
+}
+@media (max-width: 1028px){
+ .services-container {
+    align-items: center;  /* Tumanlar markazda bo'lishi uchun */
+    justify-content: center;
+    flex-direction: column;
+  }
+    
+
+}
+/* Responsive Styles for smaller screens */
+@media (max-width: 768px) {
+  .service-item {
+    flex-direction: column;  /* Rasm va matnni vertikal ko'rsatish */
+    text-align: center;  /* Matnni markazga joylashtirish */
+
+    
+  }
+.service-texts h1 {
+  font-size: 1.225rem;}
+  .services-container {
+    align-items: center;  /* Tumanlar markazda bo'lishi uchun */
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .service-icon {
+    max-width: 100%;  /* Kichik ekranlarda rasmni ko'proq kengaytirish */
+    margin-bottom: 20px;  /* Rasm va matn o'rtasida bo'shliq */
+    justify-content: center;
+  }
+
+  .service-info {
+    padding-left: 0;  /* Kichik ekranlarda chapdan paddingni olib tashlash */
+  }
+    .icon-yozuvlar{
+    flex-direction: column;
+  }
+  .icon-texts,.pricing-type{
+    flex-direction: column;
+  }
+}
+
+/* Even smaller screens (mobile phones in portrait mode) */
+@media (max-width: 480px) {
+  .service-texts h1 {
+    font-size: 1.5rem;  /* Kichik ekranlarda sarlavhani kichraytirish */
+  }
+
+  .service-info p {
+    font-size: 14px;  /* Tavsif matnini kichraytirish */
+  }
+
+  .icon-infoor i {
+    font-size: 18px;  /* Ikonaning o'lchamini kichraytirish */
+  }
+  .icon-yozuvlar{
+    flex-direction: column;
+  }
+  .icon-texts{
+    flex-direction: column;
+  }
+}
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="main-container2">
+        <!-- home section -->
+        <div class="hero">
+            <div class="header" id="home">
+                <div class="header-logotip">Workhub Central</div>
+                <div class="header-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#pricing">Pricing & Plan</a>
+                </div>
+                <div class="header-btns">
+                    <div class="language-selector">
+                        <button class="language-btn">
+                            <i class="fa-sharp fa-solid fa-language"></i>Language
+                        </button>
+                        <ul class="language-options">
+                            <li><a href="#" data-lang="en">English</a></li>
+                            <li><a href="#" data-lang="ru">Русский</a></li>
+                            <li><a href="#" data-lang="uz">O‘zbek</a></li>
+                            <li><a href="#" data-lang="es">Español</a></li>
+                            <li><a href="#" data-lang="fr">Français</a></li>
+                            <li><a href="#" data-lang="de">Deutsch</a></li>
+                            <li><a href="#" data-lang="it">Italiano</a></li>
+                            <li><a href="#" data-lang="cn">中文</a></li>
+                            <li><a href="#" data-lang="ja">日本語</a></li>
+                            <li><a href="#" data-lang="ar">العربية</a></li>
+                        </ul>
+                    </div>
+                    <a href="#bookingg" class="booking">Book Now</a>
+                </div>
+                <div class="header-mobile-btns">
+                    <div class="language-selector">
+                        <button class="language-btn">
+                            <i class="fa-sharp fa-solid fa-language"></i>
+                        </button>
+                        <ul class="language-options">
+                            <li><a href="#" data-lang="en">English</a></li>
+                            <li><a href="#" data-lang="ru">Русский</a></li>
+                            <li><a href="#" data-lang="uz">O‘zbek</a></li>
+                            <li><a href="#" data-lang="es">Español</a></li>
+                            <li><a href="#" data-lang="fr">Français</a></li>
+                            <li><a href="#" data-lang="de">Deutsch</a></li>
+                            <li><a href="#" data-lang="it">Italiano</a></li>
+                            <li><a href="#" data-lang="cn">中文</a></li>
+                            <li><a href="#" data-lang="ja">日本語</a></li>
+                            <li><a href="#" data-lang="ar">العربية</a></li>
+                        </ul>
+                    </div>
+                    <!-- shopping icon -->
+                    <div class="shopping-icon">
+                        <i class="fa-solid fa-shopping-cart"></i>
+                </div>
+                </div>
+            </div>
+            <div class="hero-title-container">
+                <div class="hero-text">
+                    <h1>Comfortable <br> Coworking Space</h1>
+                    <p>Our coworking spaces allow you to choose between collaborating in an open-plan area or in a shared office.</p>
+                    <div class="hero-action-links">
+                        <a href="#bookingg" class="book-tour">Book a Tour</a>
+                        <a href="#about" class="about-us">About Us</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chatbot Section -->
+        <div id="chatbot-container" class="chatbot-container">
+            <div id="chatbot-header" class="chatbot-header">
+                <span id="chatbot-title">How can I help you?</span>
+                <button id="closeBtn" class="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="chatbot-body" class="chatbot-body">
+                <div id="messages" class="messages"></div>
+                <input type="text" id="userInput" placeholder="Type your message..." />
+                <button id="sendBtn" class="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+
+        </div>
+
+        <!-- /home section -->
+
+         <!-- about section -->
+          <div class="about-section" id="about">
+                <div class="c-title">About Us</div>
+            <div class="contents-conatiner">
+                <div class="a-t-c">
+                <div class="about-image">
+                    <img src="https://bhiveworkspace.com/wp-content/uploads/2023/11/oworking.jpg" alt="">
+                </div>
+                <div class="about-texts">
+                    <h2>Who We Are</h2>
+                    <p>Workhub Central is a leading coworking company in the U.S. and Canada, offering a variety of workspaces tailored to meet your business needs. Our mission is to empower employees to create a more productive, collaborative, and innovative work environment.</p>
+                    <a href="#" class="read-more">Read More</a> 
+                </div>
+                </div>
+                <div class="a-t-c">
+                <div class="about-texts">
+                    <h2>Our Values</h2>
+                    <p>At Workhub Central, we believe in fostering a culture of collaboration, creativity, and innovation. Our mission is to empower employees to create a more productive, collaborative, and innovative work environment.</p>
+                    <a href="#" class="read-more">Read More</a> 
+                </div>
+                <div class="about-image">
+                    <img src="https://get.fohlio.com/hs-fs/hubfs/Imported_Blog_Media/The-Anatomy-of-Good-Coworking-Space-Design-In-Pictures-Fohlio-Product-Specification-and-Materials-Budget-Calculator-WeWork-Shanghai-1.jpg?width=2364&height=1627&name=The-Anatomy-of-Good-Coworking-Space-Design-In-Pictures-Fohlio-Product-Specification-and-Materials-Budget-Calculator-WeWork-Shanghai-1.jpg" alt="">
+                </div>
+
+                </div>
+            </div>
+            
+          </div>
+        <!-- /about section -->
+         <div class="services" id="service">
+            <div class="c-title" style="padding: 80px;">Services</div>
+            <div class="services-container">
+                <!-- Service 1 -->
+                    <div class="service-icon">
+                        <img class="ser-icon" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/d3f358186494571.6576f453aa87a.png" alt="">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-texts">
+                            <h1>Best creative working environments that suits your business.</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur dipiscing elit eius mod tempor incididunt ut labore </p>
+                        </div>
+                        <div class="icon-texts">
+                            <div class="icon-infoor">
+                            <i class="fa-solid fa-business-time"></i>
+                            </div>
+                           <div class="icon-yozuvlar">
+                             <h2>Open 24 hours</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur dipiscing elit eiusmod </p>
+                           </div>
+                        </div>
+
+                            <div class="icon-texts">
+                            <div class="icon-infoor">
+                            <i class="fa-solid fa-burger"></i>
+                            </div>
+                           <div class="icon-yozuvlar">
+                             <h2>Free Snack & Drink</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur dipiscing elit eiusmod </p>
+                           </div>
+                        </div>
+
+                        <div class="icon-texts">
+                            <div class="icon-infoor">
+                            <i class="fa-solid fa-gamepad"></i>
+                            </div>
+                           <div class="icon-yozuvlar">
+                             <h2>Enjoy Game Zone</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur dipiscing elit eiusmod </p>
+                           </div>
+                        </div>
+                            <div class="icon-texts">
+                            <div class="icon-infoor">
+                            <i class="fa-solid fa-gamepad"></i>
+                            </div>
+                           <div class="icon-yozuvlar">
+                             <h2>Enjoy Game Zone</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur dipiscing elit eiusmod </p>
+                           </div>
+                        </div>
+
+                </div>
+                <!-- Service 2 -->
+            </div>
+            </div>
+
+        <section id="advantages" id="services">
+            <div class="Main_advantagesSection__cJhRA" id="services">
+                <div class="Main_title__gnOI1">
+                    <span class="MuiTypography-root MuiTypography-sectionTitle css-1j2mmt0" style=" color: #231D4F;font-size: 2.25rem;font-weight: 600;padding: 50px;">Our advantages</span>
+                </div>
+                <div class="MuiGrid-root MuiGrid-container css-1q21l00">
+                    <!-- Advantage 1 -->
+                    <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-pq7chb">
+                        <div class="AdvantagesBox_root__3pkNd">
+                            <div class="MuiBox-root css-0">
+                                <img src="https://admin.cspace.uz/uploads/Frame_f0008c7213.svg" alt="Smart Office">
+                            </div>
+                            <div class="AdvantagesBox_textWrapper__M31in MuiBox-root css-ji5ubp">
+                                <h2 class="MuiTypography-root MuiTypography-h2 css-15jgv5c">Smart Office</h2>
+                                <h4 class="MuiTypography-root MuiTypography-h4 css-1y5b60a">
+                                    Individual ready-to-use offices. The infrastructure of the entire site is at your disposal. Flexible rental agreements and quick check-in.
+                                </h4>
+                                <p class="AdvantagesBox_mobileText__PCsdI">Smart Office</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Advantage 2 -->
+                    <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-pq7chb">
+                        <div class="AdvantagesBox_root__3pkNd">
+                            <div class="MuiBox-root css-0">
+                                <img src="https://admin.cspace.uz/uploads/Vector_2_2c85caf68d.svg" alt="Open Space">
+                            </div>
+                            <div class="AdvantagesBox_textWrapper__M31in MuiBox-root css-ji5ubp">
+                                <h2 class="MuiTypography-root MuiTypography-h2 css-15jgv5c">Open Space</h2>
+                                <h4 class="MuiTypography-root MuiTypography-h4 css-1y5b60a">
+                                    In addition to a well-equipped place, you get a working atmosphere, as well as the opportunity to make useful contacts.
+                                </h4>
+                                <p class="AdvantagesBox_mobileText__PCsdI">Open Space</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Advantage 3 -->
+                    <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-pq7chb">
+                        <div class="AdvantagesBox_root__3pkNd">
+                            <div class="MuiBox-root css-0">
+                                <img src="https://admin.cspace.uz/uploads/Vector_3_62a41e13c7.svg" alt="Meeting Rooms">
+                            </div>
+                            <div class="AdvantagesBox_textWrapper__M31in MuiBox-root css-ji5ubp">
+                                <h2 class="MuiTypography-root MuiTypography-h2 css-15jgv5c">Meeting rooms</h2>
+                                <h4 class="MuiTypography-root MuiTypography-h4 css-1y5b60a">
+                                    Equipped meeting rooms for meetings, webinars and important matters.
+                                </h4>
+                                <p class="AdvantagesBox_mobileText__PCsdI">Meeting rooms</p>
+                            </div>
+                        </div>
+                    </div>
+                                <!-- Advantage 1 -->
+                    <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-pq7chb">
+                        <div class="AdvantagesBox_root__3pkNd">
+                            <div class="MuiBox-root css-0">
+                                <img src="https://admin.cspace.uz/uploads/writing_78ce721641.svg">
+                            </div>
+                            <div class="AdvantagesBox_textWrapper__M31in MuiBox-root css-ji5ubp">
+                                <h2 class="MuiTypography-root MuiTypography-h2 css-15jgv5c">Smart Office</h2>
+                                <h4 class="MuiTypography-root MuiTypography-h4 css-1y5b60a">
+                                    Individual ready-to-use offices. The infrastructure of the entire site is at your disposal. Flexible rental agreements and quick check-in.
+                                </h4>
+                                <p class="AdvantagesBox_mobileText__PCsdI">Smart Office</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Advantage 2 -->
+                    <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-pq7chb">
+                        <div class="AdvantagesBox_root__3pkNd">
+                            <div class="MuiBox-root css-0">
+                                <img src="https://admin.cspace.uz/uploads/Vector_2_2c85caf68d.svg" alt="Open Space">
+                            </div>
+                            <div class="AdvantagesBox_textWrapper__M31in MuiBox-root css-ji5ubp">
+                                <h2 class="MuiTypography-root MuiTypography-h2 css-15jgv5c">Open Space</h2>
+                                <h4 class="MuiTypography-root MuiTypography-h4 css-1y5b60a">
+                                    In addition to a well-equipped place, you get a working atmosphere, as well as the opportunity to make useful contacts.
+                                </h4>
+                                <p class="AdvantagesBox_mobileText__PCsdI">Open Space</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Advantage 3 -->
+                    <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-pq7chb">
+                        <div class="AdvantagesBox_root__3pkNd">
+                            <div class="MuiBox-root css-0">
+                                <img src="https://admin.cspace.uz/uploads/Vector_3_62a41e13c7.svg" alt="Meeting Rooms">
+                            </div>
+                            <div class="AdvantagesBox_textWrapper__M31in MuiBox-root css-ji5ubp">
+                                <h2 class="MuiTypography-root MuiTypography-h2 css-15jgv5c">Meeting rooms</h2>
+                                <h4 class="MuiTypography-root MuiTypography-h4 css-1y5b60a">
+                                    Equipped meeting rooms for meetings, webinars and important matters.
+                                </h4>
+                                <p class="AdvantagesBox_mobileText__PCsdI">Meeting rooms</p>
+                            </div>
+                        </div>
+                    </div>
+                                <!-- Advantage 1 -->
+                    <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-pq7chb">
+                        <div class="AdvantagesBox_root__3pkNd">
+                            <div class="MuiBox-root css-0">
+                                <img src="https://admin.cspace.uz/uploads/Frame_f0008c7213.svg" alt="Smart Office">
+                            </div>
+                            <div class="AdvantagesBox_textWrapper__M31in MuiBox-root css-ji5ubp">
+                                <h2 class="MuiTypography-root MuiTypography-h2 css-15jgv5c">Smart Office</h2>
+                                <h4 class="MuiTypography-root MuiTypography-h4 css-1y5b60a">
+                                    Individual ready-to-use offices. The infrastructure of the entire site is at your disposal. Flexible rental agreements and quick check-in.
+                                </h4>
+                                <p class="AdvantagesBox_mobileText__PCsdI">Smart Office</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Advantage 2 -->
+                    <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-pq7chb">
+                        <div class="AdvantagesBox_root__3pkNd">
+                            <div class="MuiBox-root css-0">
+                                <img src="https://admin.cspace.uz/uploads/Vector_2_2c85caf68d.svg" alt="Open Space">
+                            </div>
+                            <div class="AdvantagesBox_textWrapper__M31in MuiBox-root css-ji5ubp">
+                                <h2 class="MuiTypography-root MuiTypography-h2 css-15jgv5c">Open Space</h2>
+                                <h4 class="MuiTypography-root MuiTypography-h4 css-1y5b60a">
+                                    In addition to a well-equipped place, you get a working atmosphere, as well as the opportunity to make useful contacts.
+                                </h4>
+                                <p class="AdvantagesBox_mobileText__PCsdI">Open Space</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Additional Advantages (repeat the structure as above) -->
+                    <!-- Advantage 4: Kitchen -->
+                    <!-- Advantage 5: 24/7 Availability create -->
+
+
+                    <!-- Advantage 6: Unlimited Internet -->
+                    <!-- Advantage 7: Reception Services -->
+                    <!-- Advantage 8: Comfort -->
+                </div>
+                <div class="Main_showAll__VEjqW">
+                    <button class="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root css-7hx49y" tabindex="0" type="button">
+                        Show all
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.29303 9.29308C7.48056 9.10561 7.73487 9.00029 8.00003 9.00029C8.26519 9.00029 8.5195 9.10561 8.70703 9.29308L12 12.5861L15.293 9.29308C15.3853 9.19757 15.4956 9.12139 15.6176 9.06898C15.7396 9.01657 15.8709 8.98898 16.0036 8.98783C16.1364 8.98668 16.2681 9.01198 16.391 9.06226C16.5139 9.11254 16.6255 9.18679 16.7194 9.28069C16.8133 9.37458 16.8876 9.48623 16.9379 9.60913C16.9881 9.73202 17.0134 9.8637 17.0123 9.99648C17.0111 10.1293 16.9835 10.2605 16.9311 10.3825C16.8787 10.5045 16.8025 10.6148 16.707 10.7071L12.707 14.7071C12.5195 14.8946 12.2652 14.9999 12 14.9999C11.7349 14.9999 11.4806 14.8946 11.293 14.7071L7.29303 10.7071C7.10556 10.5196 7.00024 10.2652 7.00024 10.0001C7.00024 9.73492 7.10556 9.48061 7.29303 9.29308Z" fill="#6E7C87"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <div class="big-title">
+            <h1>Private Space Overview</h1>
+            <p>Generate Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
+        </div>
+        
+        <div class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://www.appliedglobal.com/wp-content/uploads/How-to-Create-a-Modern-Meeting-Room-Setup.png" alt="Image 1">
+                <div class="text">Image 1 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://bhiveworkspace.com/wp-content/uploads/2023/11/oworking.jpg" alt="Image 2">
+                <div class="text">Image 2 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://bhiveworkspace.com/wp-content/uploads/2023/11/oworking.jpg" alt="Image 3">
+                <div class="text">Image 3 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://www.executivecentre.com/_next/image/?url=https%3A%2F%2Fassets.executivecentre.com%2Fassets%2Fbanner-cityproduct-meetingroom.jpg&w=3840&q=75" alt="Image 4">
+                <div class="text">Image 4 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://bhiveworkspace.com/wp-content/uploads/2023/11/oworking.jpg" alt="Image 5">
+                <div class="text">Image 5 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://www.appliedglobal.com/wp-content/uploads/How-to-Create-a-Modern-Meeting-Room-Setup.png" alt="Image 6">
+                <div class="text">Image 6 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://www.appliedglobal.com/wp-content/uploads/How-to-Create-a-Modern-Meeting-Room-Setup.png" alt="Image 7">
+                <div class="text">Image 7 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://www.executivecentre.com/_next/image/?url=https%3A%2F%2Fassets.executivecentre.com%2Fassets%2Fbanner-cityproduct-meetingroom.jpg&w=3840&q=75" alt="Image 8">
+                <div class="text">Image 8 Description</div>
+            </div>
+        </div>
+        <button class="prev" onclick="movePre()">&#10094;</button>
+        <button class="next" onclick="moveNex()">&#10095;</button>
+    </div>
+        <div class="big-title">
+            <h1>Coworking Space Overview</h1>
+            <p>Generate Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
+        </div>
+          <div class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://www.appliedglobal.com/wp-content/uploads/How-to-Create-a-Modern-Meeting-Room-Setup.png" alt="Image 1">
+                <div class="text">Image 1 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://bhiveworkspace.com/wp-content/uploads/2023/11/oworking.jpg" alt="Image 2">
+                <div class="text">Image 2 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://bhiveworkspace.com/wp-content/uploads/2023/11/oworking.jpg" alt="Image 3">
+                <div class="text">Image 3 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://www.executivecentre.com/_next/image/?url=https%3A%2F%2Fassets.executivecentre.com%2Fassets%2Fbanner-cityproduct-meetingroom.jpg&w=3840&q=75" alt="Image 4">
+                <div class="text">Image 4 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://bhiveworkspace.com/wp-content/uploads/2023/11/oworking.jpg" alt="Image 5">
+                <div class="text">Image 5 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://www.appliedglobal.com/wp-content/uploads/How-to-Create-a-Modern-Meeting-Room-Setup.png" alt="Image 6">
+                <div class="text">Image 6 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://www.appliedglobal.com/wp-content/uploads/How-to-Create-a-Modern-Meeting-Room-Setup.png" alt="Image 7">
+                <div class="text">Image 7 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://www.executivecentre.com/_next/image/?url=https%3A%2F%2Fassets.executivecentre.com%2Fassets%2Fbanner-cityproduct-meetingroom.jpg&w=3840&q=75" alt="Image 8">
+                <div class="text">Image 8 Description</div>
+            </div>
+        </div>
+        <button class="prev" onclick="movePrev()">&#10094;</button>
+        <button class="next" onclick="moveNext()">&#10095;</button>
+    </div>
+        <div class="big-title">
+            <h1>Meeting Space Overview</h1>
+            <p>Generate Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
+        </div>
+                  <div class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://www.appliedglobal.com/wp-content/uploads/How-to-Create-a-Modern-Meeting-Room-Setup.png" alt="Image 1">
+                <div class="text">Image 1 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://bhiveworkspace.com/wp-content/uploads/2023/11/oworking.jpg" alt="Image 2">
+                <div class="text">Image 2 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://bhiveworkspace.com/wp-content/uploads/2023/11/oworking.jpg" alt="Image 3">
+                <div class="text">Image 3 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://www.executivecentre.com/_next/image/?url=https%3A%2F%2Fassets.executivecentre.com%2Fassets%2Fbanner-cityproduct-meetingroom.jpg&w=3840&q=75" alt="Image 4">
+                <div class="text">Image 4 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://bhiveworkspace.com/wp-content/uploads/2023/11/oworking.jpg" alt="Image 5">
+                <div class="text">Image 5 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://www.appliedglobal.com/wp-content/uploads/How-to-Create-a-Modern-Meeting-Room-Setup.png" alt="Image 6">
+                <div class="text">Image 6 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://www.appliedglobal.com/wp-content/uploads/How-to-Create-a-Modern-Meeting-Room-Setup.png" alt="Image 7">
+                <div class="text">Image 7 Description</div>
+            </div>
+            <div class="carousel-item" onclick="zoomImage(this)">
+                <img src="https://www.executivecentre.com/_next/image/?url=https%3A%2F%2Fassets.executivecentre.com%2Fassets%2Fbanner-cityproduct-meetingroom.jpg&w=3840&q=75" alt="Image 8">
+                <div class="text">Image 8 Description</div>
+            </div>
+        </div>
+        <button class="prev" onclick="movePrev()">&#10094;</button>
+        <button class="next" onclick="moveNext()">&#10095;</button>
+    </div>
+    <!-- pricing & plan section -->
+    <div class="pricing-section-container" id="pricing">
+        <div class="pricing-title">
+            <h2>Plans & Pricing</h2>
+            <div class="pricing-type">
+            <p>Whether your time-saving automation needs are large or small, we’re here to help you scale.</p>
+            <div class="p-btns">
+            <button class="monthly-btn">Monthly</button>
+            <button class="hourly-btn">Hourly</button> 
+            </div>
+            </div>
+        </div>
+        <section class="pricing-section">
+    <div class="pricing-cards">
+        <!-- Private Space Plan -->
+        <div class="pricing-card">
+            <h2 class="plan-title">Private Space</h2>
+            <p class="price">$200/month</p>
+            <ul class="features-list">
+                <li><i class="fas fa-lock"></i> Secure Private Office</li>
+                <li><i class="fas fa-users"></i> 1-3 Users</li>
+                <li><i class="fas fa-clock"></i> 24/7 Access</li>
+                <li><i class="fas fa-wifi"></i> High-speed Internet</li>
+                <li><i class="fas fa-print"></i> Access to Printers</li>
+            </ul>
+            <button class="btn">Choose Plan</button>
+        </div>
+        
+        <!-- Coworking Space Plan -->
+        <div class="pricing-card">
+            <h2 class="plan-title">Coworking Space</h2>
+            <p class="price">$100/month</p>
+            <ul class="features-list">
+                <li><i class="fas fa-users"></i> Shared Workspaces</li>
+                <li><i class="fas fa-users"></i> Open to 10 Users</li>
+                <li><i class="fas fa-users-cog"></i> Collaborative Environment</li>
+                <li><i class="fas fa-wifi"></i> Free Wifi</li>
+                <li><i class="fas fa-coffee"></i> Free Coffee</li>
+            </ul>
+            <button class="btn">Choose Plan</button>
+        </div>
+
+        <!-- Meeting Space Plan -->
+        <div class="pricing-card meeting-space">
+            <h2 class="plan-title">Meeting Space</h2>
+            <p class="price">$150/month</p>
+            <ul class="features-list">
+                <li><i class="fas fa-briefcase"></i> Fully Equipped Meeting Rooms</li>
+                <li><i class="fas fa-users"></i> Seats up to 12 People</li>
+                <li><i class="fas fa-video"></i> Video Conferencing</li>
+                <li><i class="fas fa-project-diagram"></i> Whiteboard & Projector</li>
+                <li><i class="fas fa-cogs"></i> Technical Support</li>
+            </ul>
+            <button class="btn">Choose Plan</button>
+        </div>
+    </div>
+</section>
+
+    </div>
+<!-- Booking Section -->
+<!-- Booking Section -->
+<div class="container" id="bookingg">
+        <div class="bookingm1">
+            <h2>Book Your Space</h2>
+            <form>
+                <div class="form-group">
+                    <label for="space-type">Space Type</label>
+                    <select id="space-type">
+                        <option value="coworking">Coworking Space</option>
+                        <option value="meeting">Meeting Room</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="start-date">Start Date</label>
+                    <input type="date" id="start-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="end-date">End Date</label>
+                    <input type="date" id="end-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <input type="time" id="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duration (hours)</label>
+                    <input type="number" id="duration" min="1" max="12" required>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the <a href="#">terms and conditions</a></label>
+                    </div>
+                </div>
+                <button type="submit">Book Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- comments section -->
+<section class="testimonial-section">
+  <div class="testimonial-header">
+    <h2>They Satisfied With Our Coworking Space</h2>
+    <p>See what our happy clients say about us</p>
+  </div>
+  <div class="testimonial-container">
+    <div class="testimonial-card">
+      <img src="https://images.unsplash.com/photo-1501426026826-31c667bdf23d" alt="User 1" class="user-img">
+      <h3>John Doe</h3>
+      <div class="stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-alt"></i>
+      </div>
+      <p>“This coworking space is the best I have ever used! Highly recommend to anyone looking for a professional and friendly atmosphere.”</p>
+    </div>
+    <div class="testimonial-card">
+      <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef" alt="User 2" class="user-img">
+      <h3>Jane Smith</h3>
+      <div class="stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <p>“Great facilities, excellent Wi-Fi, and amazing coffee! The staff is super friendly and always helpful.”</p>
+    </div>
+    <div class="testimonial-card">
+      <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df" alt="User 3" class="user-img">
+      <h3>Alex Johnson</h3>
+      <div class="stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-alt"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <p>“The perfect place to focus on your work and meet like-minded professionals. Absolutely love it here!”</p>
+    </div>
+  </div>
+</section>
+    <!-- blogs section -->
+<section class="blog-section">
+  <div class="blog-header">
+    <h2>Our Latest Blog</h2>
+    <p>Stay updated with our latest news and insights</p>
+  </div>
+  <div class="blog-container" id="blog-container">
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Blog 1" class="blog-img">
+      <div class="blog-content">
+        <h3>5 Tips to Increase Your Productivity</h3>
+        <p>Discover the best strategies to make your day more productive and efficient.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Blog 2" class="blog-img">
+      <div class="blog-content">
+        <h3>How to Choose the Right Workspace</h3>
+        <p>Learn what factors to consider when selecting a coworking space for your needs.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1498075702571-ecb018f3752d" alt="Blog 3" class="blog-img">
+      <div class="blog-content">
+        <h3>The Benefits of Networking</h3>
+        <p>Understand how networking can open doors to new opportunities and collaborations.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+  </div>
+  <button id="loadMore" class="load-more">More</button>
+  <button id="loadLess" class="load-less" style="display: none;">Less</button>
+</section>
+
+<!-- partnors -->
+ <section class="trusted-by-section">
+  <h2>We Trusted By</h2>
+  <p>Our valued partners and sponsors</p>
+  <div class="trusted-logos">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png" alt="Google" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/1024px-Facebook_f_logo_%282021%29.svg.png?20210818083032" alt="Facebook" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Spotify_logo_with_text.svg/1200px-Spotify_logo_with_text.svg.png" alt="Spotify" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/1587px-Tesla_Motors.svg.png" alt="Tesla" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1597px-Netflix_2015_logo.svg.png" alt="Netflix" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/1450px-Adidas_Logo.svg.png" alt="Adidas" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1600px-Logo_NIKE.svg.png?20220908234918" alt="Nike" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Louis_Vuitton_logo_and_wordmark.svg/492px-Louis_Vuitton_logo_and_wordmark.svg.png" alt="Louis Vuitton" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/1600px-Samsung_Logo.svg.png" alt="Samsung" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1024px-Coca-Cola_logo.svg.png" alt="Coca-Cola" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Pepsi_2023.svg" alt="Pepsi" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/PayPal_Logo2014.svg/240px-PayPal_Logo2014.svg.png" alt="PayPal" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/1024px-YouTube_Logo_2017.svg.png" alt="YouTube" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" alt="LinkedIn" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/240px-Instagram_logo_2016.svg.png" alt="Instagram" class="logo">
+  </div>
+</section>
+<!-- FAQ -->
+<div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <button class="faq-question">
+            What is your company name?
+            <span class="plus-icon">+</span>
+        </button>
+        <div class="faq-answer">
+            <p>Our company is XYZ Ltd.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-question">
+            What services do you offer?
+            <span class="plus-icon">+</span>
+        </button>
+        <div class="faq-answer">
+            <p>We offer coworking spaces, private offices, and meeting rooms.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-question">
+            Where are you located?
+            <span class="plus-icon">+</span>
+        </button>
+        <div class="faq-answer">
+            <p>We are located in Tashkent, Uzbekistan.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-question">
+            How can I book a coworking space?
+            <span class="plus-icon">+</span>
+        </button>
+        <div class="faq-answer">
+            <p>You can book a coworking space by visiting our booking page.</p>
+        </div>
+    </div>
+</div>
+
+<!-- subscribe -->
+ <div class="newsletter-section">
+    <h2>Subscribe to our Newsletter</h2>
+    <p>Stay updated with the latest news and offers. Subscribe to our newsletter now!</p>
+    
+    <!-- Newsletter form -->
+    <form id="newsletter-form">
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+
+    <p id="success-message" class="success-message" style="display:none;">Thank you for subscribing!</p>
+    <p id="error-message" class="error-message" style="display:none;">Please enter a valid email.</p>
+</div>
+
+<!-- login -->
+ <section class="sign-up-section">
+    <div class="sign-up-container">
+        <h2>Create an Account</h2>
+        <form class="sign-up-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+            </div>
+            <button type="submit" class="sign-up-btn">Sign Up</button>
+        </form>
+        <p class="login-link">Already have an account? <a href="#">Login here</a></p>
+    </div>
+</section>
+
+<!-- footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <h3>Workhub Central</h3>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <p><strong>Contact us:</strong></p>
+            <p>Phone: +99890444444</p>
+            <p>Email: info@workhub.com</p>
+        </div>
+        <div class="footer-additional">
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Workhub Central. All rights reserved.</p>
+        <p>Designed by Yakubjan Abdisalimov</p>
+    </div>
+</footer>
+
+
+
+         </div>
+
+    <!-- js -->
+    <script  script src="index.js"></script>
+
+        <script>
+    let currentIndex = 0;
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    const itemsToShow = 5; // Ko'rsatiladigan rasmlar soni
+
+    // Move to the next slide
+    function moveNext() {
+        if (currentIndex < totalItems - 1) {
+            currentIndex++; // Keyingi slaydga o‘tish
+        }
+        updateCarousel();
+    }
+
+    // Move to the previous slide
+    function movePrev() {
+        if (currentIndex > 0) {
+            currentIndex--; // Oldingi slaydga o‘tish
+        }
+        updateCarousel();
+    }
+
+    // Update carousel position
+    function updateCarousel() {
+        const offset = -(currentIndex * (100 / itemsToShow)); // Har bir rasmning kengligi bilan hisoblash
+        document.querySelector('.carousel-container').style.transform = `translateX(${offset}%)`;
+
+        // Agar oxirgi slaydga yetgan bo‘lsa, avtomatik ravishda to‘xtaydi
+        if (currentIndex === totalItems - 1) {
+            clearInterval(autoMove); // Intervalni to‘xtatish
+        }
+    }
+
+
+
+    // Tugmalarni tanlash
+    const buttons = document.querySelectorAll("button");
+
+    // Har bir tugmaga bosish eventini ulash
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            // Avvalgi tanlangan tugmadan 'active' klassini olib tashlash
+            buttons.forEach(btn => btn.classList.remove("active"));
+            // Joriy tanlangan tugmaga 'active' klassini qo'shish
+            button.classList.add("active");
+        });
+    });
+
+        </script>
+</body>
+</html>
+
